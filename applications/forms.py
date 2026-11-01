@@ -41,3 +41,10 @@ class JobApplicationForm(forms.ModelForm):
             "notes",
         ]
         widgets = {"application_date": forms.DateInput(attrs={"type": "date"})}
+      
+        error_messages = {
+            "learner_email": {
+                "required": "Please enter your email address.",
+                "invalid": "Please enter a valid email address, for example: learner@example.com",
+            },
+        }

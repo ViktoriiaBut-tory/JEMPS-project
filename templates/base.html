@@ -13,9 +13,10 @@
     <nav class="navbar navbar-dark bg-dark px-3">
       <a class="navbar-brand" href="/">JEPMS</a>
       <div class="d-flex gap-3">
-        <a class="text-white" href="/employers/">Employers</a>
-        <a class="text-white" href="/vacancies/">Vacancies</a>
-        <a class="text-white" href="/applications/">Applications</a>
+        <a class="text-white" href="{% url 'dashboard' %}">Dashboard</a>
+        <a class="text-white" href="{% url 'employer_list' %}">Employers</a>
+        <a class="text-white" href="{% url 'vacancy_list' %}">Vacancies</a>
+        <a class="text-white" href="{% url 'application_list' %}">Applications</a>
         {% if user.is_authenticated %}
         <form method="post" action="{% url 'logout' %}">
           {% csrf_token %}

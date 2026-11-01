@@ -50,7 +50,7 @@ class JobApplication(models.Model):
         WITHDRAWN = "Withdrawn", "Withdrawn"
 
     learner_name = models.CharField(max_length=150)
-    learner_email = models.EmailField(blank=True)
+    learner_email = models.EmailField()
     vacancy = models.ForeignKey(
         Vacancy,
         on_delete=models.PROTECT,
