@@ -22,7 +22,6 @@ load_dotenv(BASE_DIR / ".env")
 
 # Django secret key
 SECRET_KEY = os.environ["SECRET_KEY"]
-
 LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/accounts/login/"
@@ -30,13 +29,11 @@ LOGOUT_REDIRECT_URL = "/accounts/login/"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",")
+    
 # Application definition
 
 INSTALLED_APPS = [
